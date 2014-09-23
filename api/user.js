@@ -807,7 +807,10 @@ function resetUser(req, res) {
     var reset;
 
     then(function (cont) {
-        reset = new Buffer(req.path[3], 'base64').toString();
+        var url=req.headers.referer;
+        var str="req";
+        var url=url.split(str)
+        reset = new Buffer(url[1], 'base64').toString();
         reset = parseJSON(reset);
         if (!reset || !reset.u || !reset.r || !reset.k) {
             cont(jsGen.Err(msg.MAIN.resetInvalid));
@@ -841,7 +844,7 @@ function resetUser(req, res) {
                     userObj.email = reset.e.toLowerCase();
                     break;
                 case 'passwd':
-                    userObj.passwd = SHA256(reset.e);
+                    userObj.passwd = HmacSHA256(SHA256(reset.e), 'jsGen');
                     break;
                 default:
                     cont(jsGen.Err(msg.MAIN.resetInvalid));
