@@ -1527,7 +1527,7 @@ jsGen
         $scope.reset = {
             name: '',
             email: '',
-            request: $routeParams.req
+            request: $routeParams.type
         };
         $scope.parent = {
             title: locale.RESET[$routeParams.type],
@@ -1560,7 +1560,7 @@ jsGen
         if (['locked', 'passwd'].indexOf($routeParams.type) < 0) {
             app.restAPI.user.get({
                 ID: 'reset',
-                OP: $routeParams.req
+                OP: $routeParams.type
             }, function () {
                 app.toast.success(3 + locale.TIMING.goHome, locale.RESPONSE.success);
                 app.timing(null, 1000, 3).then(function () {
