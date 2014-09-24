@@ -78,7 +78,8 @@
                     <label>邮箱验证：</label>
                     <input type="button" class="pure-button pure-button-small" ng-class="{'primary-bg':editGlobal.emailVerification}" ng-click="editGlobal.emailVerification=!editGlobal.emailVerification" value="{{!editGlobal.emailVerification | switch:'turn'}}">
                 </div>
-                <div class="pure-controls">
+                <div class="pure-control-group">
+                    <label></label>
                     <button type="submit" class="pure-button success-bg" ng-click="submit()">保存</button>
                     <button class="pure-button info-bg" ng-click="reset()">重置</button>
                 </div>
@@ -126,7 +127,8 @@
                     <label>用户积分系数：</label>
                     <input type="text" ng-model="editGlobal.UsersScore" ng-list="/[,，、]/"/>
                 </div>
-                <div class="pure-controls-group">
+                <div class="pure-control-group">
+                    <label></label>
                     <small>评论×<strong>{{editGlobal.UsersScore[0]}}</strong>
                     ，文章×<strong>{{editGlobal.UsersScore[1]}}</strong>，关注×<strong>{{editGlobal.UsersScore[2]}}</strong>
                     ，粉丝×<strong>{{editGlobal.UsersScore[3]}}</strong>，文章热度×<strong>{{editGlobal.UsersScore[4]}}</strong>，
@@ -136,7 +138,8 @@
                     <label>评论提升系数：</label>
                     <input type="text" ng-model="editGlobal.ArticleStatus" ng-list="/[,，、]/"/>
                 </div>
-                <div class="pure-controls-group">
+                <div class="pure-control-group">
+                    <label></label>
                     <small>评论的评论数达到<strong>{{editGlobal.ArticleStatus[0]}}</strong>时，自动提升正常文章，
                     达到<strong>{{editGlobal.ArticleStatus[1]}}</strong>时，自动提升为推荐文章</small>
                 </div>
@@ -144,12 +147,14 @@
                     <label>文章热度系数：</label>
                     <input type="text" ng-model="editGlobal.ArticleHots" ng-list="/[,，、]/"/>
                 </div>
-                <div class="pure-controls-group">
+                <div class="pure-control-group">
+                    <label></label>
                     <small>访问+<strong>{{editGlobal.ArticleHots[0]}}</strong>，支持/反对±<strong>
                     {{editGlobal.ArticleHots[1]}}</strong>，评论+<strong>{{editGlobal.ArticleHots[2]}}</strong>，收藏+
                     <strong>{{editGlobal.ArticleHots[3]}}</strong>，推荐+<strong>{{editGlobal.ArticleHots[4]}}</strong></small>
                 </div>
-                <div class="pure-controls">
+                <div class="pure-control-group">
+                    <label></label>
                     <button type="submit" class="pure-button success-bg" ng-click="submit()">保存</button>
                     <button class="pure-button info-bg" ng-click="reset()">重置</button>
                 </div>
@@ -189,17 +194,20 @@
                     <label>分页导航缓存：</label>
                     <input type="number" ng-model="editGlobal.paginationCache"/>
                 </div>
-                <div class="pure-controls-group">
+                <div class="pure-control-group">
+                    <label></label>
                     <small>分页导航缓存有效期<strong>{{editGlobal.paginationCache}}</strong>秒</small>
                 </div>
                 <div class="pure-control-group">
                     <label>操作限时缓存：</label>
                     <input type="number" ng-model="editGlobal.TimeInterval"/>
                 </div>
-                <div class="pure-controls-group">
+                <div class="pure-control-group">
+                    <label></label>
                     <small>搜索、用户添加文章或评论等限制操作的最小时间间隔，最小值为3秒</small>
                 </div>
-                <div class="pure-controls">
+                <div class="pure-control-group">
+                    <label></label>
                     <button type="submit" class="pure-button success-bg" ng-click="submit()">保存</button>
                     <button class="pure-button info-bg" ng-click="reset()">重置</button>
                 </div>
@@ -236,7 +244,8 @@
                     <label>是否开启SSL：</label>
                     <input type="button" class="pure-button pure-button-small" ng-class="{'primary-bg':editGlobal.smtp.secureConnection}" ng-click="editGlobal.smtp.secureConnection=!editGlobal.smtp.secureConnection" value="{{!editGlobal.smtp.secureConnection | switch:'turn'}}">
                 </div>
-                <div class="pure-controls">
+                <div class="pure-control-group">
+                    <label></label>
                     <button type="submit" class="pure-button success-bg" ng-click="submit()">保存</button>
                     <button class="pure-button info-bg" ng-click="reset()">重置</button>
                 </div>
@@ -260,7 +269,8 @@
                     <label>是否开启图片上传：</label>
                     <input type="button" class="pure-button pure-button-small" ng-class="{'primary-bg':editGlobal.upload}" ng-click="editGlobal.upload=!editGlobal.upload" value="{{!editGlobal.upload | switch:'turn'}}">
                 </div>
-                <div class="pure-controls">
+                <div class="pure-control-group">
+                    <label></label>
                     <button type="submit" class="pure-button success-bg" ng-click="submit()">保存</button>
                     <button class="pure-button info-bg" ng-click="reset()">重置</button>
                 </div>
