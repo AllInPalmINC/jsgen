@@ -24,7 +24,7 @@
                             <input type="checkbox" ng-model="user.isSelect"/>
                         </td>
                         <td><a ng-href="/{{user._id}}">{{user.name}}</a><a ng-show="user.locked" title="该用户已被锁定，点击保存后解锁" ng-click="user.locked=false" gen-tooltip>
-                            <i class="fa fa-minus-circle"></a></td>
+                            <i class="fa fa-minus-circle"></i></a></td>
                         <td>{{user.email}}</td>
                         <td>
                             <select class="" ng-model="user.role" ng-options="role | match:'role' for role in roleArray">
