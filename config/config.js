@@ -8,7 +8,7 @@ module.exports = {
 /*
 * 注意，所有的路径配置的前面请加‘/’而后面不要加'/'！
 */
-    server: 'angularjs.cn',
+    server: 'cfamous.cn',
     poweredBy: 'jsGen',
     listenPort: 3000,//监听端口，如果配合clusterplus监听多个端口，这里也可以使用[3000, 3001, 3002, 3003]数组形式，rrestjs会智能分析
     //baseDir: path.join(__dirname, '/..'), //绝对目录地址，下面的目录配置都是根据这个目录的相对地址，这里是根据config文件进行配置地址
@@ -92,7 +92,7 @@ module.exports = {
 //客户端跨域功能
 	isClientPipe: false,  //如果为true，则提供给客户端跨域请求的功能
     upyun: {  // upyun 表单上传API配置，更多配置选项请参考upyun.com
-        'bucket': 'angularjs',
+        'bucket': 'cfamous',
         'content-length-range': '1024,4096000',
         'expiration': 600, // 授权过期时间：以页面加载完毕开始计时，10分钟内有效
         'save-key': '/{year}{mon}{day}/{filemd5}_{filename}{.suffix}', // 保存路径：最终将以"/用户ID/年月日/upload_待上传文件名"的形式进行保存

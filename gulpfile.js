@@ -33,7 +33,8 @@ gulp.task('css', function () {
       'static/bower_components/toastr/toastr.css',
       'static/bower_components/font-awesome/css/font-awesome.css',
       'static/src/css/prettify.css',
-      'static/src/css/main.css'
+      'static/src/css/main.css',
+      'static/src/css/cfamous.css'
     ])
     .pipe(concat('app.css'))
     .pipe(replace('VERSION', version))
@@ -75,7 +76,8 @@ gulp.task('js-app', function () {
       'static/src/js/services.js',
       'static/src/js/filters.js',
       'static/src/js/directives.js',
-      'static/src/js/controllers.js'
+      'static/src/js/controllers.js',
+      'static/src/js/cfamous.js'
     ])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('static/dist/js/'));

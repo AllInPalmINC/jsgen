@@ -1,0 +1,9 @@
+.logo{max-width: 40px !important;max-height:40px !important;margin:5px !important;}
+.g_title{font-size:24px;font-weight: bold;}
+.slider_title{font-size:44px;font-family: AvenirNextLTW02-Regular, sans-serif;}
+.small_logo{width:35px;margin-right:10px;}
+
+#gotoTop{cursor:pointer;position: fixed;bottom: 10px;right: 10px;background: url(../img/gotoTop.png) no-repeat #222222 center center;width:40px;height:40px;border-radius: 5px;z-index: 9000;opacity: 0.5;
+    filter: alpha(opacity=50);}
+#gotoTop:hover{opacity: 1;filter: alpha(opacity=100);}
+.footer_wrap a{color:#666666 !important;margin:0 5px;}
