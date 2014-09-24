@@ -7,3 +7,5 @@
     filter: alpha(opacity=50);}
 #gotoTop:hover{opacity: 1;filter: alpha(opacity=100);}
 .footer_wrap a{color:#666666 !important;margin:0 5px;}
+
+.pure-control-group .pure-checkbox{text-align: left !important;}
