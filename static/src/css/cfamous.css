@@ -9,3 +9,5 @@
 .footer_wrap a{color:#666666 !important;margin:0 5px;}
 
 .pure-control-group .pure-checkbox{text-align: left !important;}
+
+textarea{resize:vertical;}
