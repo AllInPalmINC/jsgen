@@ -726,7 +726,17 @@ jsGen
         };
         $scope.highlight = function (article) {
             // this is todo
-            article.status = article.status === 2 ? 1 : 2;
+            if (checkLogin()) {
+                restAPI.save({
+                    ID: article._id,
+                    OP: 'highlight'
+                }, {
+                    status: article.status
+                }, function () {
+                    article.status = article.status === 2 ? 1 : 2;
+                    app.toast.success(locale.ARTICLE[article.status === 2 ? 'highlight' : 'unhighlight']);
+                });
+            }
         };
         $scope.setMark = function (article) {
             if (checkLogin()) {

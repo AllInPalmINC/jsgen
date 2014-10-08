@@ -454,9 +454,38 @@ function editArticle(req, ID) {
     }).fail(errorHandler);
 }
 
+function highlight(req, ID) {
+    var highlight= req.apibody.status === 2;
+    return then(function (cont) {
+        checkTimeInterval(req, 'Highlight').fin(function (cont2, err, value) {
+            if (value) {
+                cont(jsGen.Err(msg.MAIN.timeIntervalErr + '[' + jsGenConfig.TimeInterval + 's]'));
+            } else {
+                articleCache.getP(ID, false).fin(cont);
+            }
+        });
+    }).then(function (cont, article) {
+
+        articleDao.highlight({
+            _id: ID,
+            status: (req.apibody.status === 2 ? 1 : 2)
+        });
+
+        calcuHots(article);
+        articleCache.put(ID, article);
+        listCache.update(ID, function (value) {
+            value.hots = article.hots;
+            return value;
+        });
+        commentCache.remove(ID);
+        checkTimeInterval(req, 'Highlight', true);
+        cont(null, highlight);
+
+    }).fail(errorHandler);
+}
+
 function setMark(req, ID) {
     var mark = !! req.apibody.mark;
-
     return then(function (cont) {
         checkTimeInterval(req, 'SetMark').fin(function (cont2, err, value) {
             if (value) {
@@ -763,7 +792,12 @@ function setArticle(req, res) {
             setOppose(req, article._id).then(function (cont, oppose) {
                 return res.sendjson(resJson(null, oppose));
             }).fail(cont);
-        } else {
+        }else if (req.path[3] === 'highlight') {
+            highlight(req, article._id).then(function (cont, highlight) {
+                return res.sendjson(resJson(null, highlight));
+            }).fail(cont);
+        }
+        else {
             cont(jsGen.Err(msg.MAIN.requestDataErr));
         }
     }).fail(res.throwError);

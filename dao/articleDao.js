@@ -212,6 +212,13 @@ articles.bind({
             _id: articleObj._id
         }, setObj, noop);
     },
+    highlight: function (articleObj) {
+        var setObj = {};
+        setObj.$set = articleObj;
+        this.update({
+            _id: articleObj._id
+        }, setObj, noop);
+    },
 
     setComment: function (articleObj, callback) {
         var setObj = {},
@@ -284,6 +291,7 @@ module.exports = {
     setFavor: articles.setFavor,
     setOppose: articles.setOppose,
     setMark: articles.setMark,
+    highlight: articles.highlight,
     setComment: articles.setComment,
     setNewArticle: articles.setNewArticle,
     delArticle: articles.delArticle
